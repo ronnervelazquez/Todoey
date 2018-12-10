@@ -61,7 +61,7 @@ class CategoryViewController: UITableViewController {
             
         }
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new item"
+            alertTextField.placeholder = "Create new category"
             textField = alertTextField
             print(textField)
         }

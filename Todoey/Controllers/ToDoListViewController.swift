@@ -24,7 +24,7 @@ class ToDoListViewController: UITableViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedCategory?.name)
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
     //MARK - TableView datasources methods
@@ -63,8 +63,8 @@ class ToDoListViewController: UITableViewController  {
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
             newItem.done = false
-            newItem.parentCategory = self.selectedCategory
-            //self.itemArray.append(newItem)
+            print(self.selectedCategory)
+            newItem.parentCategory = self.selectedCategory!
             self.saveItems()
             self.loadItems()
             
